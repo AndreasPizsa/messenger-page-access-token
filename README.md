@@ -36,12 +36,25 @@ yarn add messenger-page-access-token
 ## Usage
 
 ```js
-const MessengerPageAccessToken = require('messenger-page-access-token');
+const messenger = require('messenger-core')
+const loadPlugins = require('plugin-powered')
+const pluginOptions = {
+  prefix: 'messenger-'
+}
 
-const messengerPageAccessToken = new MessengerPageAccessToken();
+loadPlugins(messenger, {
+  'page-access-token': '<<YOUR_PAGE_ACCESS_TOKEN>>'
+}, pluginOptions)
 
-console.log(messengerPageAccessToken.renderName());
-// script
+// if your bot handles multiple pages
+loadPlugins(messenger, {
+  'messenger-page-access-token': {
+    '<<PAGE_ID>>'         : '<<YOUR_PAGE_ACCESS_TOKEN>>',
+    '<<ANOTHER_PAGE_ID>>' : '<<ANOTHER_PAGE_ACCESS_TOKEN>>'
+    // etc.
+  }, pluginOptions
+})
+
 ```
 
 
@@ -57,7 +70,7 @@ console.log(messengerPageAccessToken.renderName());
 [MIT](LICENSE) © [Andreas Pizsa](https://github.com/AndreasPizsa)
 
 
-## 
+##
 
 [npm]: https://www.npmjs.com/
 

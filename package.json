@@ -2,8 +2,7 @@
   "name": "messenger-page-access-token",
   "description": "Have the receiving page's access_token handy",
   "version": "1.0.0",
-  "author":
-    "Andreas Pizsa <hopster@gmail.com> (https://github.com/AndreasPizsa)",
+  "author": "Andreas Pizsa <hopster@gmail.com> (https://github.com/AndreasPizsa)",
   "bugs": {
     "url": "https://github.com/andreaspizsa/messenger-page-access-token/issues",
     "email": "hopster@gmail.com"
@@ -40,14 +39,19 @@
     "node": ">=8.3"
   },
   "homepage": "https://github.com/andreaspizsa/messenger-page-access-token",
-  "keywords": ["messenger-core-plugin"],
+  "keywords": [
+    "messenger-core-plugin"
+  ],
   "license": "MIT",
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
       "prettier --write --single-quote --trailing-comma none",
       "git add"
     ],
-    "*.md": ["remark . -qfo", "git add"]
+    "*.md": [
+      "remark . -qfo",
+      "git add"
+    ]
   },
   "main": "index.js",
   "nyc": {
@@ -55,10 +59,16 @@
     "lines": 100,
     "functions": 100,
     "branches": 100,
-    "reporter": ["lcov", "html", "text"]
+    "reporter": [
+      "lcov",
+      "html",
+      "text"
+    ]
   },
   "remarkConfig": {
-    "plugins": ["preset-github"]
+    "plugins": [
+      "preset-github"
+    ]
   },
   "repository": {
     "type": "git",
@@ -74,7 +84,9 @@
   },
   "xo": {
     "extends": "prettier",
-    "plugins": ["prettier"],
+    "plugins": [
+      "prettier"
+    ],
     "parserOptions": {
       "sourceType": "script"
     },
