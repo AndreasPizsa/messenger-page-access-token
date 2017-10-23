@@ -60,6 +60,11 @@ loadPlugins(messenger, {
   'page-access-token': 'MY_ENVIRONMENT_VARIABLE'
 }, pluginOptions)
 
+// use the `MESSENGER_PAGE_ACCESS_TOKEN` environment variable
+loadPlugins(messenger, {
+  'page-access-token': true
+}, pluginOptions)
+
 ```
 
 

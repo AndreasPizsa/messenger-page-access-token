@@ -1,6 +1,6 @@
 {
   "name": "messenger-page-access-token",
-  "description": "Have the receiving page's access_token handy",
+  "description": "🗝 Have the receiving page's access_token handy",
   "version": "1.0.3",
   "author": "Andreas Pizsa <hopster@gmail.com> (https://github.com/AndreasPizsa)",
   "bugs": {
@@ -41,7 +41,11 @@
   },
   "homepage": "https://github.com/andreaspizsa/messenger-page-access-token",
   "keywords": [
-    "messenger-core-plugin"
+    "messenger-core-plugin",
+    "facebook messenger",
+    "facebook",
+    "messenger",
+    "bot"
   ],
   "license": "MIT",
   "lint-staged": {

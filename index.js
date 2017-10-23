@@ -25,9 +25,10 @@ const _ = {
 module.exports = PageAccessTokens
 
 function PageAccessTokens(pageAccessTokens) {
-  const getToken = _.isString(pageAccessTokens)
-    ? pageAccessTokenFunctionFromString(pageAccessTokens)
-    : pageAccessTokenFromHash
+  const getToken =
+    !pageAccessTokens || _.isString(pageAccessTokens)
+      ? pageAccessTokenFunctionFromString(pageAccessTokens)
+      : pageAccessTokenFromHash
 
   return async function(message, context) {
     const pageAccessToken = getToken(message, context)
@@ -40,6 +41,7 @@ function PageAccessTokens(pageAccessTokens) {
   }
 
   function pageAccessTokenFunctionFromString(pageAccessToken) {
+    pageAccessToken = pageAccessToken || 'MESSENGER_PAGE_ACCESS_TOKEN'
     if (/^[a-z0-9_]{1,64}$/i.test(pageAccessToken)) {
       pageAccessToken = process.env[pageAccessToken]
     }

@@ -26,6 +26,16 @@ test('it works with a string that’s the name of an ENV variable', async t => {
   t.is(_.get(context, 'messenger.recipient.pageAccessToken'), PAGE_ACCESS_TOKEN)
 })
 
+test('it defaults to the MESSENGER_PAGE_ACCESS_TOKEN ENV variable', async t => {
+  const ENV_NAME = 'MESSENGER_PAGE_ACCESS_TOKEN'
+  const PAGE_ACCESS_TOKEN = randomatic('aA0', 182)
+  process.env[ENV_NAME] = PAGE_ACCESS_TOKEN
+  const plugin = new PageTokenPlugin()
+  const context = {}
+  await plugin(FIXTURE.entry[0].messaging[0], context)
+  t.is(_.get(context, 'messenger.recipient.pageAccessToken'), PAGE_ACCESS_TOKEN)
+})
+
 test('it works with an object', async t => {
   const randomPageId = randomString()
   const PAGE_ACCESS_TOKENS = {
