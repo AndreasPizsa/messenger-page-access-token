@@ -1,7 +1,7 @@
 {
   "name": "messenger-page-access-token",
   "description": "Have the receiving page's access_token handy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Andreas Pizsa <hopster@gmail.com> (https://github.com/AndreasPizsa)",
   "bugs": {
     "url": "https://github.com/andreaspizsa/messenger-page-access-token/issues",
@@ -31,6 +31,7 @@
     "messenger-core": "^0.1.0",
     "nyc": "^11.1.0",
     "prettier": "^1.6.1",
+    "randomatic": "^2.0.0",
     "remark-cli": "^4.0.0",
     "remark-preset-github": "^0.0.6",
     "xo": "^0.19.0"
@@ -45,7 +46,7 @@
   "license": "MIT",
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
-      "prettier --write --single-quote --trailing-comma none",
+      "prettier --write --single-quote --trailing-comma none --no-semi",
       "git add"
     ],
     "*.md": [
@@ -96,7 +97,8 @@
         {
           "singleQuote": true,
           "bracketSpacing": true,
-          "trailingComma": "none"
+          "trailingComma": "none",
+          "semi": false
         }
       ],
       "max-len": [

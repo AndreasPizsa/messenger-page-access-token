@@ -55,6 +55,11 @@ loadPlugins(messenger, {
   }, pluginOptions
 })
 
+// if you have your page access token store in an environment variable
+loadPlugins(messenger, {
+  'page-access-token': 'MY_ENVIRONMENT_VARIABLE'
+}, pluginOptions)
+
 ```
 
 
